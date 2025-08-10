@@ -174,14 +174,6 @@ El **login** del frontend valida contra `/usuarios`, pero el backend **no** impl
 - **Backend:** Node.js, Express 5, mysql2, dotenv, CORS
 - **Frontend:** Vite, HTML/JS vanilla (SPA con routing básico)
 
-### 🧩 Problemas comunes
-- **CORS**: si cambias el puerto del frontend, ajusta `app.use(cors({ origin: ... }))` en `backend/app.js`.
-- **Fechas/horas**: `YYYY-MM-DD` y `HH:MM:SS`.
-- **ENUMS**: valida en frontend con los mismos valores que en la BD.
-
-### 📄 Licencia
-No se especifica licencia en el repositorio original. Agrega una si corresponde.
-
 ---
 
 ## 🇬🇧 English
@@ -279,5 +271,3 @@ Frontend checks `/usuarios`, but the backend ships **no password hashing/JWT** (
 - **Backend:** Node.js, Express 5, mysql2, dotenv, CORS
 - **Frontend:** Vite, HTML/vanilla JS (simple SPA routing)
 
-### 📄 License
-No explicit license provided.
