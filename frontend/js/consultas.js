@@ -7,6 +7,9 @@ const tbody = document.getElementById("ConsultasFiltros");
 
   newTbody.addEventListener("click", async function (event) {
     event.preventDefault();
+
+
+    const action = event.target.value;
     // Check if the clicked element is a button
     if (event.target.tagName !== "BUTTON") return;
 

@@ -105,6 +105,8 @@ mysql -u root -p < MySQLscript.sql
 ```bash
 cd backend
 npm install
+npm init -y
+npm install mysql2 fs csv-parser csv-parse express cors dotenv
 node app.js
 # API en http://localhost:3000  (CORS permite http://localhost:5173 por defecto)
 ```
@@ -112,6 +114,7 @@ node app.js
 ```bash
 cd frontend
 npm install
+npm init -y
 npm run dev
 # Vite en http://localhost:5173
 ```
