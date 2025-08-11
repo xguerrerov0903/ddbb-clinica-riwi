@@ -1,33 +1,3 @@
-CREATE DATABASE clinica;
-
-USE clinica;
-
-CREATE TABLE pacientes(
-    id_paciente INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR (100) NOT NULL,
-    email VARCHAR (100) UNIQUE NOT NULL
-);
-
-CREATE TABLE medicos (
-    id_medico INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR (100) NOT NULL,
-    especialidad VARCHAR (100)
-);
-
-CREATE TABLE CITA (
-    id_cita INT PRIMARY KEY AUTO_INCREMENT,
-    id_paciente INT,
-    id_medico INT,
-    fecha DATE NOT NULL,
-    hora TIME NOT NULL,
-    motivo VARCHAR (100) NOT NULL,
-    descripcion VARCHAR (200) ,
-    ubicacion ENUM ('Sede Norte','Sede Centro','Sede Sur'),
-    metodo_pago ENUM ('Efectivo','Transferencia','Tarjeta Crédito','Tarjeta Débito'),
-    estatus ENUM ('Cancelada','Confirmada','Reprogramada','Pendiente'),
-    FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente) ON DELETE SET NULL,
-    FOREIGN KEY (id_medico) REFERENCES medicos(id_medico) ON DELETE SET NULL
-);
 
 CREATE DATABASE clinica;
 
@@ -67,7 +37,7 @@ CREATE TABLE usuarios(
 );
 
 SELECT * FROM usuarios;
-
+/*
 SET SQL_SAFE_UPDATES = 0;
 DELETE FROM citas;
 DELETE FROM pacientes;
@@ -78,7 +48,7 @@ TRUNCATE TABLE pacientes;
 TRUNCATE TABLE medicos;
 SET FOREIGN_KEY_CHECKS = 1;
 SET SQL_SAFE_UPDATES = 1;
-
+*/
 
 SELECT m.nombre as Medico, m.especialidad, c.*
 FROM citas  c
@@ -131,7 +101,8 @@ SELECT
 	c.metodo_pago, COUNT(id_cita) AS Total_citas
 FROM citas c
 WHERE c.fecha BETWEEN '2025-02-14' AND '2025-05-08'
-GROUP BY c.metodo_pago
+GROUP BY c.metodo_pago;
 
+/*DROP DATABASE clinica;*/
 
-
+SELECT * FROM pacientes;
